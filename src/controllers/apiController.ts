@@ -35,8 +35,10 @@ export const register = async (req: Request, res: Response) => {
             res.status(201);
             res.json({user, token})
         } else {
-            res.json({error: 'E-mail já cadastrado'})
+            res.json({error: 'E-mail já cadastrado'});
         }
+    } else {
+        res.json({error: 'E-mail ou senha não enviados'});
     }
 }
 
